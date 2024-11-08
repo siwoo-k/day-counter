@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>stoo's website</title>
+    <style>
+        html, body {
+          font-family: Roboto;
+        }
+
+        #container {
+            display: none;
+            background-color: rgb(50, 73, 190);
+            color: rgb(6, 6, 6);
+            text-align: left;
+            width: 700px;
+            font-size: 20px;
+            padding: 12px;
+            border-radius: 16px;
+        }
+
+        #main-div {
+          position: fixed;
+          left: 50%;
+          transform: translate(-50%, 0);
+          top: 50px;
+          border-radius: 12px;
+        }
+
+        #prompt {
+          align-items: left;
+          font-weight: 500;
+        }
+
+        #surprise {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 0);
+          bottom: 10px;
+          font-size: 17px;
+          border: none;
+          border-radius: 5px;
+          padding: 6px;
+          background-color: rgb(50, 73, 190);
+          color: rgb(6, 6, 6);
+          cursor: pointer;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+          transition: box-shadow 0.3s;
+        }
+
+        #surprise:hover {
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        #miffy {
+          height: 40%;
+          bottom: 15px;
+          right: 0;
+        }
+    </style>
+</head>
+<body>
+  <img src="walll.jpg" id="miffy" style="position: fixed;">
+  <div id="main-div">
+    <h2 id="prompt">Enter password</h2>
+    <span id="hint" style="position: fixed; top: 94px; font-size: 10px; left: 2px;">hint: phone password</span>
+    <form id="pswd">
+      <input type="password" id="validate" 
+            placeholder="password here">
+      <button type="button" onclick="fun()">Submit</button>
+    </form>
+
+    <div id="container">
+      <span>Dear Stephanie,<br><br></span>
+      <span style="font-size: 16px;">
+        It’s been a thousand days since we’ve officially became boyfriend and girlfriend!<br><br>I am so proud of us of where we are now and proud of our growth together as a couple. Every day I spend time with you, I realize that I wouldn’t have been able to navigate through the hardships in my life as well as I can do now. Every day I’m with you, I’m swarmed with feelings of happiness that can lift me even from my lowest point. Your hugs and kisses give me so much comfort and a sense of security that I could never find in anyone or anywhere else.<br><br>These past thousand days, we felt happy and learned to know how it felt being loved by someone. We would make jokes, sometimes out of pocket, to make us laugh because we love watching each other smile. We made love and made each other feel more secure in our bodies that nobody else has done before (hi sexy). We felt sad, sometimes discouraged, and say stuff that we don’t really mean and make mistakes in that moment. But, we will never lose our feelings for each other because no matter what, I will always be honest with you and I’ll always communicate everything with you.<br><br>Know that (I will always tell you this over and over again) I love you Stephanie Le and I loved spending a thousand days and I can’t wait to spend another thousand, and another more (and another more and another and another). I truly am thankful that you came into my life on that night of October 5th ♡.<br><br>
+      </span>
+      <button id="surprise">Button!</button>
+    </div>
+  </div>
+
+<script>
+    async function main() {
+      document.getElementById("validate").addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            fun();
+            event.preventDefault();
+        }
+      });
+    }
+
+    async function fun() {
+        let inputPswd = document.getElementById("validate")
+                                .value;
+        let correctPswd = "1525";
+        if (inputPswd === correctPswd) {
+            document.getElementById("hint")
+                .style.display = "none";
+            document.getElementById("container")
+                .style.display = "block";
+            document.getElementById("pswd")
+                .style.display = "none";
+            document.getElementById("prompt")
+                .style.display = "none";
+        } else {
+            alert("Incorrect password!");
+        }
+    }
+    main();
+</script>
+</body>
+</html>
