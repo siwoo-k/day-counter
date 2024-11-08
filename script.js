@@ -20,11 +20,7 @@ async function showLetter() {
 }
 
 async function showVideo() {
-  document.getElementById("wait-audio").volume = 0.03;
-  let video = document.getElementById("hamster-video");
-  video.style.display = "flex";
-  video.play();
-  video.scrollIntoView();
+  window.open('https://www.youtube.com/watch?v=LydG44oIywc', '_blank');
 }
 
 function main() {
@@ -87,7 +83,6 @@ function main() {
       audio.play();
     }
   });
-  
 }
 
 window.onload = main();
