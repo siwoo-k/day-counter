@@ -29,9 +29,9 @@ async function showVideo() {
 
 function main() {
   var audio = document.getElementById("wait-audio");
-  if (audio.paused) {
-    audio.play();
-  }
+  // if (audio.paused) {
+  //   audio.play();
+  // }
   audio.volume = 0.4;
 
   let input = document.getElementById("validate");
@@ -40,7 +40,54 @@ function main() {
       checkPass();
       event.preventDefault();
     }
+    if (audio.paused) {
+      audio.play();
+    }
   });
+
+  document.addEventListener('mouseover', () => {
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+
+  document.addEventListener('mouse', () => {
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+
+  document.addEventListener('mouseout', () => {
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+  
+  // Click event
+  document.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+
+  document.addEventListener('touchstart', () => {
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+  
+  document.addEventListener('touchmove', () => {
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+  
+  document.addEventListener('touchend', () => {
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+  
 }
 
 window.onload = main();
